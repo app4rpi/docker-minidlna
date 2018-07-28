@@ -26,7 +26,7 @@ $ sudo docker run -d --name minidlna --net=host -v /var/media:/media docker-mini
 3b. Run minidlna in a container and start automatically
 
 ```
-$ sudo docker run -d --restart --name minidlna --net=host -v /var/media:/media docker-minidlna:latest
+$ sudo docker run -d --restart always --name minidlna --net=host -v /var/media:/media docker-minidlna:latest
 ```
 
 
