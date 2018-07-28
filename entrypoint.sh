@@ -2,7 +2,6 @@
 
 set -e
 
-> /etc/minidlna.conf
 for VAR in `env`; do
     if [[ $VAR =~ ^MINIDLNA_ ]]; then
         minidlna_name=`echo "$VAR" | sed -r "s/MINIDLNA_(.*)=.*/\1/g" | tr '[:upper:]' '[:lower:]'`
