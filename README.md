@@ -19,4 +19,7 @@ The image docker-minidlna:latest has been created with a size of 43.1MB
 
 3. Run minidlna in a container
 
-  $ sudo docker run -d --name minidlna --net=host -v /var/media:/media docker-minidlna:latest
+    $ sudo docker run -d --name minidlna --net=host -v /var/media:/media docker-minidlna:latest
+
+To open console session in the started minidlna container:
+    $ sudo docker exec -i -t minidlna /bin/bash
