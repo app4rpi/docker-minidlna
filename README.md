@@ -29,6 +29,7 @@ $ sudo docker run -d --name minidlna --net=host -v /var/media:/media docker-mini
 $ sudo docker run -d --restart --name minidlna --net=host -v /var/media:/media docker-minidlna:latest
 ```
 
+
 To open console session in the started minidlna container:
 
 ```
