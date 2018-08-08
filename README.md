@@ -1,6 +1,12 @@
 # Create docker image with minidlna and run it in a container
 
-## 1. Create the working directory and the configuration files
+## 1a. Cloning data from GitHub and modify config files if necessary
+```
+$ git clone https://github.com/app4rpi/docker-minidlna.git 
+$ cd docker-minidlna
+$ nano <configfile>
+```
+## 1a. Create the working directory and the configuration files
 
 ```
 $ mkdir docker-minidlna && cd docker-minidlna
