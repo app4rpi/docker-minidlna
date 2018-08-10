@@ -6,7 +6,7 @@ $ git clone https://github.com/app4rpi/docker-minidlna.git
 $ cd docker-minidlna
 $ nano <configfile>
 ```
-## 1a. Create the working directory and the configuration files
+## 1b. Create the working directory and the configuration files
 
 ```
 $ mkdir docker-minidlna && cd docker-minidlna
