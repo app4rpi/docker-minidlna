@@ -56,7 +56,7 @@ v /var/media/musica:/media/music
 ```
 Any modification of the declared file system of docker or host will cause a new scan. If the same declaration of volumes is maintained, you can even use a container of another image.
 
-The symlinks to directories has not worked with minidlna. Minidlna recognizes them, but does not scan their content.
+The symlinks to directories has not workedfor my with minidlna. Minidlna recognizes them, but does not scan their content.
 ## Database directory
 Because the file system is created and destroyed in each release of the Docker container, databases and associated files are regenerated every time. In the case of systems with many files, it may be appropriate to keep the data between start and stop, new releases of the container (eg when starting the system) or containers of different images. For this purpose, the local db_dir must be linked to a host directory.
 ```
