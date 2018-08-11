@@ -36,7 +36,7 @@ $ docker run -d --restart always --name minidlna --net=host docker-minidlna:late
 $ docker run -d --restart always --name minidlna --net=host \
     -v /var/media/musica:/media/music -v /media/ssd1/musica:/media/m1 \
     -v /var/media/video:/media/video -v /media/ssd1/VideoClips:/media/v1 \
-    --mount source=minidlna,target=/var/cache/minidlna minidlna:latest
+    --mount source=minidlna,target=/var/cache/minidlna docker-minidlna:latest
 ```
 ### To open console session in the started minidlna container:
 ```
