@@ -28,8 +28,11 @@ If the directories do not exist they will be created as necessary
 From their declaration and creation they can be linked to directories of the file system of the host
 ```
 -v /var/media/:/var/media \
-docker run -d --name mini2dlna --net=host \ 
-  -v /media/ssd1/musica:/media/m0 \ 
+```
+Example
+```
+docker run -d --name minidlna --net=host \ 
+  -v /media/ssd1/music:/media/musica \ 
   -e MINIDLNA_MEDIA_DIR=/home/pi/video \ 
   -v /media/ssd1/VideoClips:/home/pi/video \ 
   -v /var/media/.db:/var/cache/minidlna \ 
@@ -67,3 +70,4 @@ The management of volumes follows the insgutions:
 $ docker volume [create <name>] [inspect <name>] [ls] [prune] [rm]
 ```
 The use of volumes increases the security and portability of the data
+The directory of the created docker volume is accessible in the file system of the host in the address indicated in ```docker volume inspect minidlna```
