@@ -24,7 +24,9 @@ You can also add multimedia file locations. Keep in mind that these locations re
 -e MINIDLNA_MEDIA_DIR=/var/media \
 ```
 Care must be taken in declarations to avoid duplicate areas.
+
 If the directories do not exist they will be created as necessary
+
 From their declaration and creation they can be linked to directories of the file system of the host
 ```
 -v /var/media/:/var/media \
@@ -39,8 +41,10 @@ docker run -d --name minidlna --net=host \
   docker-minidlna:latest
 ```
 ## Access the media directories
-The file system of the Docker container is inaccessible and the data / files have been added as soon as they are created. In addition, the file system is reset every time along with the docker container
-The directory of multimedia files is habitually located in the host, local or removable media. These locations must be made accessible from Docker
+The file system of the Docker container is inaccessible and the data / files have been added as soon as they are created. In addition, the file system is reset every time along with the docker container.
+
+The directory of multimedia files is habitually located in the host, local or removable media. These locations must be made accessible from Docker.
+
 Because the docker can access the data, the volume must be declared as a link to the command line when the container is launched:
 ```
 docker run [...] -v &lt;hostDirectory>:&lt;dockerDirectory> [...]
@@ -51,6 +55,7 @@ v /var/media/musica:/media/music
 -v /media/hd01/video:/media/video
 ```
 Any modification of the declared file system of docker or host will cause a new scan. If the same declaration of volumes is maintained, you can even use a container of another image.
+
 The symlinks to directories has not worked with minidlna. Minidlna recognizes them, but does not scan their content.
 ## Database directory
 Because the file system is created and destroyed in each release of the Docker container, databases and associated files are regenerated every time. In the case of systems with many files, it may be appropriate to keep the data between start and stop, new releases of the container (eg when starting the system) or containers of different images. For this purpose, the local db_dir must be linked to a host directory.
@@ -69,5 +74,6 @@ The management of volumes follows the insgutions:
 ```
 $ docker volume [create <name>] [inspect <name>] [ls] [prune] [rm]
 ```
-The use of volumes increases the security and portability of the data
+The use of volumes increases the security and portability of the data.
+
 The directory of the created docker volume is accessible in the file system of the host in the address indicated in ```docker volume inspect minidlna```
