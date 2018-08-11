@@ -47,10 +47,23 @@ The directories in the docker file system must be created or created automatical
 v /var/media/musica:/media/music
 -v /media/hd01/video:/media/video
 ```
-### Database directory
+Any modification of the declared file system of docker or host will cause a new scan. If the same declaration of volumes is maintained, you can even use a container of another image.
+The symlinks to directories has not worked with minidlna. Minidlna recognizes them, but does not scan their content.
+## Database directory
 Because the file system is created and destroyed in each release of the Docker container, databases and associated files are regenerated every time. In the case of systems with many files, it may be appropriate to keep the data between start and stop, new releases of the container (eg when starting the system) or containers of different images. For this purpose, the local db_dir must be linked to a host directory.
 ```
-docker run [...] -v v /var/media/.db:/var/cache/minidlna [...]
+docker run [...] -v /var/media/.db:/var/cache/minidlna [...]
 ```
-
-ocker run [...] --mount source=minidlna,target=/var/cache/minidlna [...]
+It is also possible to leave the permanent data using a Docker Volume
+```
+$ docker run [...] --mount source = minidlna, target = / var / cache / minidlna [...]
+```
+This volume has been created as a Docker data container
+```
+$ docker volume create minidlna
+```
+The management of volumes follows the insgutions:
+```
+$ docker volume [create <name>] [inspect <name>] [ls] [prune] [rm]
+```
+The use of volumes increases the security and portability of the data
