@@ -40,7 +40,7 @@ $ docker run -d --restart always --name minidlna --net=host \
 ```
 ### To open console session in the started minidlna container:
 ```
-$ docker exec -i -t minidlna /bin/bash
+$ docker exec -it minidlna /bin/bash
 ```
 ### Start, stop and remove a docker container
 ```
